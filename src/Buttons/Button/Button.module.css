@@ -1,0 +1,56 @@
+:root {
+    --tran: all 0.3s linear;
+}
+
+.btn1 {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    /* Adjust font size for small screens */
+    height: 40px;
+    padding: 8px 20px;
+    /* Adjust padding for small screens */
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(180deg, #FF74C8 0%, #E744A6 100%);
+    border-radius: 5px;
+    width: auto;
+    max-width: 100%;
+    border: 8px;
+    position: relative;
+    z-index: 1;
+    transition: var(--tran);
+    overflow: hidden;
+}
+
+/* Media query for screens smaller than a certain width (e.g., 768px) */
+@media screen and (max-width: 768px) {
+    .btn1 {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+        padding: 6px 16px;
+        /* Adjust padding for smaller screens */
+    }
+}
+
+.btn1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: var(--tran);
+}
+
+.btn1:hover:before {
+    transform: translateX(0);
+    z-index: -1;
+}
+
+.btn1:hover {
+    color: black;
+}
